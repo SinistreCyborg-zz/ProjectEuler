@@ -1,12 +1,23 @@
 package main
 
 import (
+    "fmt"
     "strconv"
 )
 
 func main() {
 
+    var largestPalindrome int
+    for p := 999; p > 0; p-- {
+        for q := 999; q > 0; q-- {
+            product := p * q
+            if isPalindrome(product) && product > largestPalindrome {
+                largestPalindrome = product
+            }
+        }
+    }
 
+    fmt.Println(strconv.Itoa(largestPalindrome))
 
 }
 
